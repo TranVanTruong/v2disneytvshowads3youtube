@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <View 
+        android:id="@+id/vSelected"
+        style="@style/diver_pink_width"
+         />
+
+    <TextView
+        android:id="@+id/tvCatName"
+        style="@style/text_slide_menu"
+        android:background="@drawable/selector_item_slide"
+        android:text="Trang chu"
+        android:textColor="@color/color_white" />
+
+</LinearLayout>
