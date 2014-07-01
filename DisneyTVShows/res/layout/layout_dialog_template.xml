@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_layout_index"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_index"
+        android:gravity="center_horizontal"
+        android:paddingBottom="5dip"
+        android:paddingTop="5dip"
+        android:text="Thông báo"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvContent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="20dip"
+        android:layout_marginBottom="20dip"
+        android:text="Tài khoản bảo kim của bạn không đủ để thanh toán đơn hàng này!"
+        android:textColor="#333333"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#c8c8c8" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="35dip"
+        android:background="#c8c8c8"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tvLeft"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="1dip"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button_dialog"
+            android:clickable="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="Yes"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvRight"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="1dip"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button_dialog"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="No"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

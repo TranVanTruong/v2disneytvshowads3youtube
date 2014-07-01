@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llNoInternet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:background="@color/color_index"
+    android:orientation="vertical" >
+    <TextView 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dip"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:text="There's no network connection at the moment"
+        />
+    <TextView 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14dip"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:textColor="@android:color/white"
+        android:text="Please check the internet connection"
+        />
+		<Button 
+		    android:id="@+id/btTry"
+		    android:layout_width="wrap_content"
+		    android:layout_height="40dip"
+		    android:text="Retry"
+		    android:layout_marginTop="20dip"
+		    android:paddingLeft="10dip"
+		    android:paddingRight="10dip"
+		    android:paddingTop="5dip"
+		    android:paddingBottom="5dip"
+		    android:textColor="@android:color/black"
+		    android:background="@drawable/selector_button_dialog"
+		    android:layout_marginBottom="5dip"
+		    android:layout_gravity="center"
+		    />
+</LinearLayout>

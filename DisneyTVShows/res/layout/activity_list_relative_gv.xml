@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_index" >
+   <ScrollView 
+        android:layout_below="@+id/ac_b"
+        android:id="@+id/sl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.youtube.player.YouTubePlayer
+                android:id="@+id/youtubeplayerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" />
+            
+        </LinearLayout>
+    </ScrollView>
+    
+    <TextView
+       
+        android:id="@+id/tvNoData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:padding="10dip"
+        android:text="@string/text_nodata"
+        android:textSize="17dip"
+        android:visibility="gone" />
+
+    <!-- <ListView
+        android:id="@+id/lvRelative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_nomal"
+        android:layout_marginRight="@dimen/padding_nomal"
+        android:background="@android:color/white"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:scrollbars="none"
+        android:visibility="gone" >
+    </ListView> -->
+   
+  
+<GridView
+     android:layout_below="@+id/sl"
+    android:id="@+id/gv_video"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:numColumns="2"
+    android:gravity="center"
+    android:layout_centerInParent="true"
+    android:columnWidth="200dp"
+    android:stretchMode="columnWidth"
+    />
+
+    <include
+        android:id="@+id/ll_loading"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:layout_centerInParent="true"
+        layout="@layout/layout_loadding" />
+
+    <include
+        android:id="@+id/llNoInternet"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        layout="@layout/layout_no_internet"
+        android:visibility="gone" />
+
+  <include
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        layout="@layout/layout_ads" />
+</RelativeLayout>

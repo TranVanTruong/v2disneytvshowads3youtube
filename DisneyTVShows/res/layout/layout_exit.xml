@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="47dip" >
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/exit_note"
+            android:textColor="#222222"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="#DEDEDE" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dip"
+        android:paddingLeft="10dip"
+        android:paddingTop="10dip"
+        android:text="@string/exit_content"
+        android:textColor="@color/color_index"
+        android:textSize="15dp"
+        
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dip"
+        android:layout_marginTop="10dip"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btExitLeft"
+            android:layout_width="fill_parent"
+            android:layout_height="35dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="5dip"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button_back_right"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:text="@string/exit_left"
+            android:textColor="@android:color/white"
+            android:textSize="13dip" />
+
+        <Button
+            android:id="@+id/btExitCenter"
+            android:layout_width="fill_parent"
+            android:layout_height="35dip"
+            android:layout_marginRight="5dip"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button_ads"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:text="@string/exit_center"
+            android:textColor="@android:color/white"
+            android:textSize="13dip" />
+
+        <Button
+            android:id="@+id/btExitRight"
+            android:layout_width="fill_parent"
+            android:layout_height="35dip"
+            android:layout_marginRight="10dip"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button_back_right"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:text="@string/exit_bt_right"
+            android:visibility="gone"
+            android:textColor="@android:color/white"
+            android:textSize="13dip" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btIntentApp"
+        android:layout_width="fill_parent"
+        android:layout_height="35dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_weight="1"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:background="@drawable/selector_button_back_right"
+        android:text="@string/exit_intent_team"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="10dip"
+        android:textSize="13dip" />
+
+     <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="#DEDEDE" />
+
+    <LinearLayout
+        android:id="@+id/llAds"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+    </LinearLayout>
+</LinearLayout>

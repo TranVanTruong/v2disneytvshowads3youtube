@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Disney TV Shows</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <string name="admod">a1532d03bf44851</string>
+    <string name="start_app">203515433</string>
+    <string name="start_app_dev">103380706</string>
+ <string  name="close">(Close (x))</string>
+    <!-- ViewPager -->
+    <string-array name="detail_indicator_name">
+        <item>New</item>
+        <item>Index Page</item>
+        <item>Favorites</item>
+    </string-array>
+    
+    <!-- Text Tab -->
+    <string name="tab_new">New</string>
+    <string name="tab_home">Home</string>
+    <string name="tab_view">Top hits</string>
+     <string name="tab_playlist">Playlist</string>
+     
+    
+     <string name="error_player">There was an error initializing the YouTubePlayer (%1$s)</string>
+     
+     <!-- Dialog -->
+     <string name="dialog_content_error">an error occurs!</string>
+     
+     <string name="dialog_thulai">Try</string>
+     
+     <string name="dialog_boqua">Skip</string>
+     
+     <string name="dialog_thongbao">Message</string>
+     
+        <!-- Exit -->
+    <string name="exit_note">Message</string>
+    <string name="company_name">For Children, For Future</string>
+    <string name="exit_content">Do you want rating this app?</string>
+    <string name="exit_bt_right">Skip</string>
+    <string name="exit_intent_team">View our other applications</string>
+    <string name="exit_center">Agree</string>
+    <string name="exit_left">Exit</string>
+    
+       <!-- My Ads -->
+    <string name="ads_content">Disney TV Shows Cartoon</string>
+    <string name="ads_title">Disney TV Shows</string>
+    <string name="ads_bt_down">Download</string>
+    <string name="ads_skip">Skip</string>
+    
+    <!--  -->
+    <string name="text_nodata">Empty Video....</string>
+    <string name="text_view">view</string>
+    <string name="error_video">Video is deleted\nPlease choose other video</string>
+
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    <com.kids.test11.customize.ImageVideoCustomize
+        android:id="@+id/ivAvatar" 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        />
+	<TextView 
+	    android:id="@+id/tvName"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingTop="5dip"
+	    android:paddingBottom="5dip"
+	    android:layout_marginLeft="5dip"
+	    android:maxLines="2"
+	    android:ellipsize="end"
+	    android:background="@drawable/gradient_item_video"
+	    android:text="Conan-Tham tu"
+	    android:textColor="@color/color_white"
+	    android:layout_alignBottom="@+id/ivAvatar"
+	    android:textSize="13sp"
+	    android:textStyle="bold"
+	    />
+
+</RelativeLayout>

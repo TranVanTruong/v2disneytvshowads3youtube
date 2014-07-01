@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:background="@color/color_bg_slide"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/text_slide_menu"
+        android:gravity="center_horizontal"
+        android:text="@string/app_name"
+        android:textColor="@color/color_index" />
+
+    <View style="@style/diver_pink_height" />
+
+    <LinearLayout
+        style="@style/layout_slide_menu"
+        android:orientation="horizontal" >
+
+        <View
+            android:id="@+id/vSelectedIndex"
+             style="@style/diver_pink_width" 
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/tvIndex"
+            style="@style/text_slide_menu"
+            android:text="Home"
+            android:textColor="@color/color_white" />
+    </LinearLayout>
+
+    <View style="@style/diver_dark" />
+
+    <TextView
+        style="@style/text_slide_menu"
+        android:text="CATEGORIES"
+        android:textColor="@color/color_index" />
+
+    <View style="@style/diver_pink_height" />
+
+    <ListView
+        android:id="@+id/lvListCat"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:divider="@color/color_diver_listview"
+        android:dividerHeight="1dip" >
+    </ListView>
+
+    <View style="@style/diver_dark" />
+
+    <TextView
+        style="@style/text_slide_menu"
+        android:text="OPTIONS"
+        android:textColor="@color/color_index" />
+
+    <View style="@style/diver_pink_height" />
+
+    <TextView
+        android:id="@+id/tvInfo"
+        style="@style/text_slide_menu"
+        android:text="INFOMATION"
+        android:clickable="true"
+        android:textColor="@color/color_white" />
+</LinearLayout>
+</ScrollView>
