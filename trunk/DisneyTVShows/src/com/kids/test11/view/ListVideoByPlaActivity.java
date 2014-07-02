@@ -35,6 +35,7 @@ import com.google.ads.AdView;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayer.OnFullscreenListener;
 import com.google.android.youtube.player.YouTubePlayer.PlaybackEventListener;
 import com.google.android.youtube.player.YouTubePlayer.PlayerStateChangeListener;
 import com.google.android.youtube.player.YouTubePlayer.Provider;
@@ -56,7 +57,7 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.utils.StorageUtils;
 
 public class ListVideoByPlaActivity extends YouTubeBaseActivity implements
-		YouTubePlayer.OnInitializedListener {
+		YouTubePlayer.OnInitializedListener,OnFullscreenListener {
 	// private ListView lvVideo;
 	private GridView gr_Video;
 	private LinearLayout llLoading;
@@ -78,7 +79,7 @@ private ImageView imgsearch;
 	HorizontalScrollView hs_album;
 	// customvideo
 	ScrollView sl;
-	public static final String API_KEY = "AIzaSyDt9Lnv1gCU_7gxmtRarZkfQ7ZZn13EXzs";
+	public static final String API_KEY = "AIzaSyAvTsZ9w26KE-iV8gaBJRUaanipbL2Bku4";
 	private YouTubePlayer youTubePlayer;
 	private YouTubePlayerView youTubePlayerView;
 	private MyPlayerStateChangeListener myPlayerStateChangeListener;
@@ -366,10 +367,8 @@ private ImageView imgsearch;
 		youTubePlayer = player;
 		youTubePlayer.setPlayerStateChangeListener(myPlayerStateChangeListener);
 		youTubePlayer.setPlaybackEventListener(myPlaybackEventListener);
-		if (!wasRestored) {
-			isLoading = false;
+		if (!wasRestored && isLoading==true) {
 				player.cueVideo(infoVideo.getvYoutube());
-			
 		}
 
 	}
@@ -471,6 +470,12 @@ private ImageView imgsearch;
 		}
 
 		return infoVideo;
+	}
+
+	@Override
+	public void onFullscreen(boolean arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
