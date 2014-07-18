@@ -57,7 +57,7 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.utils.StorageUtils;
 
 public class ListVideoByPlaActivity extends YouTubeBaseActivity implements
-		YouTubePlayer.OnInitializedListener,OnFullscreenListener {
+		YouTubePlayer.OnInitializedListener, OnFullscreenListener {
 	// private ListView lvVideo;
 	private GridView gr_Video;
 	private LinearLayout llLoading;
@@ -74,7 +74,7 @@ public class ListVideoByPlaActivity extends YouTubeBaseActivity implements
 	private LinearLayout llLoadingFooter;
 	private String aId;
 	private TextView tvNoData;
-private ImageView imgsearch;
+	private ImageView imgsearch;
 	private ImageView ivShare;
 	HorizontalScrollView hs_album;
 	// customvideo
@@ -91,6 +91,7 @@ private ImageView imgsearch;
 	protected DisplayImageOptions options;
 	InfoVideo infoVideo;
 	private AdView ad;
+	LinearLayout rlContainAds;
 
 	@Override
 	public void onCreate(Bundle arg0) {
@@ -123,15 +124,16 @@ private ImageView imgsearch;
 		init();
 		youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtubeplayerview);
 		youTubePlayerView.initialize(API_KEY, this);
+		
 		myPlayerStateChangeListener = new MyPlayerStateChangeListener();
 		myPlaybackEventListener = new MyPlaybackEventListener();
 		Debug.debug("Package Name : " + packageName);
 	}
 
 	private void init() {
-		imgsearch=(ImageView)findViewById(R.id.iv_search);
+		imgsearch = (ImageView) findViewById(R.id.iv_search);
 		imgsearch.setVisibility(View.GONE);
-		ImageView imView=(ImageView)findViewById(R.id.ivShare);
+		ImageView imView = (ImageView) findViewById(R.id.ivShare);
 		imView.setVisibility(View.GONE);
 		Bundle bundle = getIntent().getExtras();
 
@@ -141,7 +143,7 @@ private ImageView imgsearch;
 			Debug.debug("ListVideoByPlaActivity : " + aId);
 		}
 
-		final LinearLayout rlContainAds = (LinearLayout) findViewById(R.id.rlContainAds);
+		rlContainAds = (LinearLayout) findViewById(R.id.rlContainAds);
 		sl = (ScrollView) findViewById(R.id.sl);
 		ad = (AdView) findViewById(R.id.ad);
 		ad.setAdListener(new AdListener() {
@@ -202,7 +204,8 @@ private ImageView imgsearch;
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int po,
 					long arg3) {
-			 infoVideo = adapter.getItem(po);
+				infoVideo = adapter.getItem(po);
+				isLoading = true;
 				youTubePlayer.loadVideo(infoVideo.getvYoutube());
 			}
 		});
@@ -347,8 +350,6 @@ private ImageView imgsearch;
 		}
 	};
 
-
-
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
@@ -364,11 +365,16 @@ private ImageView imgsearch;
 	@Override
 	public void onInitializationSuccess(Provider provider,
 			YouTubePlayer player, boolean wasRestored) {
-		youTubePlayer = player;
-		youTubePlayer.setPlayerStateChangeListener(myPlayerStateChangeListener);
-		youTubePlayer.setPlaybackEventListener(myPlaybackEventListener);
-		if (!wasRestored && isLoading==true) {
-				player.cueVideo(infoVideo.getvYoutube());
+
+		if (!wasRestored && isLoading == true) {
+			player.cueVideo(infoVideo.getvYoutube());
+			youTubePlayer = player;
+			youTubePlayer
+					.setPlayerStateChangeListener(myPlayerStateChangeListener);
+			youTubePlayer.setPlaybackEventListener(myPlaybackEventListener);
+			youTubePlayer.setOnFullscreenListener(this);
+			youTubePlayer.setFullscreenControlFlags(8);
+			youTubePlayer.setFullscreen(true);
 		}
 
 	}
@@ -434,6 +440,7 @@ private ImageView imgsearch;
 		}
 
 	}
+
 	@Override
 	public void onConfigurationChanged(Configuration newConfig) {
 		// TODO Auto-generated method stub
@@ -441,15 +448,18 @@ private ImageView imgsearch;
 		if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
 			getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 					WindowManager.LayoutParams.WRAP_CONTENT);
+			isLoading = true;
 			youTubePlayer.play();
-//			LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//					WindowManager.LayoutParams.FLAG_FULLSCREEN);
-//			ad.setLayoutParams(layoutParams);
+			// LinearLayout.LayoutParams layoutParams = new
+			// LinearLayout.LayoutParams(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+			// WindowManager.LayoutParams.FLAG_FULLSCREEN);
+			// ad.setLayoutParams(layoutParams);
 			gr_Video.setVisibility(View.GONE);
 		} else {
 			gr_Video.setVisibility(View.VISIBLE);
 		}
 	}
+
 	protected InfoVideo parseJsonVideo(JSONObject object) {
 		InfoVideo infoVideo = null;
 		try {
@@ -475,7 +485,12 @@ private ImageView imgsearch;
 	@Override
 	public void onFullscreen(boolean arg0) {
 		// TODO Auto-generated method stub
-		
+		if (arg0) {
+			rlContainAds.setVisibility(View.GONE);
+			gr_Video.setVisibility(View.GONE);
+		} else {
+			rlContainAds.setVisibility(View.VISIBLE);
+		}
 	}
 
 }
